@@ -1,7 +1,9 @@
 #include "presentation.h"
+#include "list.h"
 
 void menu(){
-    int answer;
+    int answer, result;
+    
     while (true){
         printf("----------------------------------------------------|\n");
         printf("PRINCIPAL MENU                                      |\n");
@@ -17,7 +19,7 @@ void menu(){
         printf("%d - Search a key                                    |\n", SEARCH);
         printf("%d - Print a list                                   |\n", PRINT);
         printf("%d - Delete a list                                  |\n", DELETE);
-        printf("%d - Measure the size of a list                     |\n", MEASURE);
+        printf("%d - Describe a list                                |\n", DESCRIBE);
         printf("\n%d - Exit\n", EXIT);
         
         scanf("%d", &answer);
@@ -27,6 +29,7 @@ void menu(){
         else{
             switch (answer){
                 case CREATE:
+                    result = createMenu(); 
                     break;
                 
                 default:
@@ -35,4 +38,15 @@ void menu(){
             }
         }
     }
+}
+
+int createMenu(){
+    int answer, result;
+    char title[TITLE_SIZE];
+
+    printf("Enter the title of the list\n");
+    scanf("%s", title); // consertar o problema de ler espacos em branco
+    printf("%s\n",title);
+    result = create(title);
+    return result;
 }

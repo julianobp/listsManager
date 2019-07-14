@@ -16,15 +16,19 @@
 #define SEARCH 9
 #define PRINT 10
 #define DELETE 11
-#define MEASURE 12
+#define DESCRIBE 12
 #define EXIT 0
 
 void menu();
 
-// Sub-Menus
-void createMenu();
+#define BACK 0
+
+#define NOMINATE 1
+int createMenu();
+
 void insertMenu();
 void breakMenu();
 void sortMenu();
+void printMenu();
 
 #endif // PRESENTATION_H_INCLUDED
